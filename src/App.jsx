@@ -1,17 +1,12 @@
 import { useState } from 'react';
-import styles from './app.module.css';
+import styles from './cell.module.css';
+import AppLayout from './AppLayout';
+import Cell from './Cell';
 
 function App() {
 	const cells = [];
 	for (let i = 0; i < 9; i++) {
-		cells.push(
-			<div
-				className={styles.cell}
-				onClick={(event) => cellClicked(event)}
-				key={i}
-				id={i}
-			></div>,
-		);
+		cells.push(<Cell cellClicked={cellClicked} key={i} id={i} />);
 	}
 	const cellsArr = Array(9).fill('');
 
@@ -23,7 +18,7 @@ function App() {
 	if (gameFinished === 'draw') {
 		display = 'Ничья!';
 	} else if (gameFinished === 'win') {
-		display = `Победили ${currentPlayer === 'нолики' ? 'крестики' : 'нолики'}`;
+		display = `Победили ${currentPlayer === 'нолики' ? 'крестики' : 'нолики'}!`;
 	} else {
 		display = `Ходят ${currentPlayer}`;
 	}
@@ -75,15 +70,7 @@ function App() {
 		allCells.forEach((c) => (c.textContent = ''));
 	}
 
-	return (
-		<div className={styles.container}>
-			<div className={styles.display}>{display}</div>
-			<div className={styles.game}>{cells}</div>
-			<button className={styles.reset} onClick={resetGame}>
-				Начать заново
-			</button>
-		</div>
-	);
+	return <AppLayout display={display} cells={cells} resetGame={resetGame} />;
 }
 
 export default App;

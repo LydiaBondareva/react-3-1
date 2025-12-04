@@ -36,10 +36,10 @@ export default [
 			'prettier/prettier': 'error',
 			'react-hooks/rules-of-hooks': 'error',
 			'react-hooks/exhaustive-deps': 'warn',
-			'react/prop-types': 'off', // Отключите, если используете TypeScript
 			'no-unused-vars': 'off',
 			'react/react-in-jsx-scope': 'off',
 			'no-undef': 'warn',
+			'react/prop-types': 'warn',
 		},
 		settings: {
 			react: {
