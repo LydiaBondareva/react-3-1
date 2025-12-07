@@ -8,27 +8,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.display {
-  background-color: #ffe4e1;
-  color: #666;
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin-bottom: 15px;
-	width: 263px;
-  font-size: 1.5em;
-  font-weight: bold;
-	text-align: center;
-}
-
-.game {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  width: 300px;
-  height: 300px;
-  gap: 5px;
-}
-
 .reset {
   background-color: #ff7b69;
   color: #373737;
@@ -45,8 +24,6 @@
 	cursor: pointer;
 	transition: background-color 0.3s ease;
 }
-
-
 
 .reset:hover{
 	background-color: #ff6753;
